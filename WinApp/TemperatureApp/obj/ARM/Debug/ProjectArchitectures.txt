@@ -1,0 +1,1 @@
+C:\bin\cloudweather\WinApp\TemperatureApp\TemperatureApp.csproj;arm

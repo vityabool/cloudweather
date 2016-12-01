@@ -8,8 +8,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="73" Margin="544,365,0,0" VerticalAlignment="Top" Width="285" Click="button_Click"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="63" Margin="544,232,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="285"/>
+        <Button x:Name="button" Content="Get Temperature" Margin="0,30,0,0" HorizontalAlignment="Center" Height="73" VerticalAlignment="Center" Width="285" Click="button_Click"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Center" Height="63" Margin="0,-200,0,0" TextWrapping="Wrap" Text="0.00" VerticalAlignment="Center" Width="285" FontSize="20" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Center" Height="63" Margin="0,-400,0,0" TextWrapping="Wrap" Text="Cloud Weather Station" VerticalAlignment="Center" Width="400" FontSize="24" FontWeight="Bold" TextAlignment="Center" BorderThickness="0"/>
 
     </Grid>
 </Page>
