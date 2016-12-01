@@ -2,34 +2,29 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using WebApplication.Data;
+using WebApplication.Models;
+using WebApplication.Models.ManageViewModels;
+using WebApplication.Services;
 
 namespace WebApplication.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
+        private ApplicationDbContext context;
+        public HomeController(ApplicationDbContext context) {
+            this.context = context;
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View();
+        public IActionResult Index() {
+            var temperature = context.Temperatures.OrderByDescending(t => t.TimeStamp).First();
+            return View(temperature);
         }
     }
+
+
 }
