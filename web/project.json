@@ -50,6 +50,7 @@
     }
   },
   "tools": {
+    "BundlerMinifier.Core": "2.2.306",
     "Microsoft.AspNetCore.Razor.Tools": "1.1.0-preview4-final",
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-preview4-final",
     "Microsoft.EntityFrameworkCore.Tools.DotNet": "1.1.0-preview4-final",
@@ -88,11 +89,11 @@
     ]
   },
   "scripts": {
+    "precompile": [
+      "dotnet bundle"
+    ],
     "prepublish": [
-      "npm install",
-      "bower install",
-      "gulp clean",
-      "gulp min"
+      "bower install"
     ],
     "postpublish": [
       "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%"
